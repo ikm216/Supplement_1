@@ -21,6 +21,14 @@ def count(string):
     """
      return len(string)
 
+def upsert(dictionary, key, value):
+    if key in dictionary.keys():
+        #dictionary contains key, update
+        dictionary[key] = dictionary[key] + value
+    else:
+        #dictionary does not contain key, set
+        dictionary[key] = value
+        
 def test_should_return_four_for_two_and_two():
     assert add(2, 2) == 4
 
