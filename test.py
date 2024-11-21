@@ -22,13 +22,25 @@ def count(string):
      return len(string)
 
 def upsert(dictionary, key, value):
+    """ Upserts a value into the dictionary
+
+    The value must implement addition with itself
+
+    Args:
+        dictionary: the dictionary to upsert
+        key: the key of the dictionary for the upsert
+        value: the value being upserted
+
+    Returns:
+        The updated dictionary with the upserted value
+    """
     if key in dictionary.keys():
         #dictionary contains key, update
         dictionary[key] = dictionary[key] + value
     else:
         #dictionary does not contain key, set
         dictionary[key] = value
-        
+
 def test_should_return_four_for_two_and_two():
     assert add(2, 2) == 4
 
